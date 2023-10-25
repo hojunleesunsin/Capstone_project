@@ -1,4 +1,3 @@
-// 모듈 임포트
 const express = require('express'); // Express 웹 애플리케이션 프레임워크 임포트
 const app = express(); // Express 앱 인스턴스 생성
 const server = require('http').createServer(app); // HTTP 서버 생성
@@ -17,7 +16,7 @@ server.listen(port, '192.168.35.49', () => {
       console.log('Received dhtData: ', data);
 
       let emitValue;
-      // 온도와 습도 값이 모두 10 이상인지 확인
+      // 온도와 습도 값이 모두 기준수치 이상인지 확인
       if (data.temperature >= 29 && data.humidity >= 99) {
         emitValue = { "dhtData": 1 };
       } else {
