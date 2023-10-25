@@ -1,27 +1,11 @@
 ![Status Classify Smart Baby Sleeper](https://capsule-render.vercel.app/api?type=waving&color=auto&height=300&section=header&text=Status%20Classify%20Smart%20Baby%20Sleeper&fontSize=50)
 
 ## 목차
-- [Status Classify Smart Baby Sleeper](#status-classify-smart-baby-sleeper)
-  - [목차](#목차-1)
-  - [프로젝트 개요](#프로젝트-개요-1)
-  - [주요 기능](#주요-기능)
-  - [프로젝트 목표](#프로젝트-목표)
-  - [기술 스택](#기술-스택)
-
-## 프로젝트 개요
-아기 상태 감별 스마트 베이비 슬리퍼는 부모가 아기를 돌보는 데 도움을 주는 스마트 기기입니다. 이 프로젝트의 목표는 아기의 울음소리를 감지하고 분석하여 부모에게 알림을 보내고, 아기가 왜 울고 있는지를 이해하고 조치를 취할 수 있도록 돕는 것입니다. 또한, 아기의 울음을 감지하면 자동으로 백색소음을 발생시키고 침대를 흔들어 아기를 달래며, 부모가 언제든 실시간 스트리밍을 통해 아기를 모니터링할 수 있습니다.
-
-# Status Classify Smart Baby Sleeper
-
-![Status Classify Smart Baby Sleeper](https://capsule-render.vercel.app/api?type=waving&color=auto&height=300&section=header&text=Status%20Classify%20Smart%20Baby%20Sleeper&fontSize=50)
-
-## 목차
-- [Status Classify Smart Baby Sleeper](#status-classify-smart-baby-sleeper)
-  - [목차](#목차-1)
-  - [프로젝트 개요](#프로젝트-개요-1)
-  - [주요 기능](#주요-기능)
-  - [프로젝트 목표](#프로젝트-목표)
-  - [기술 스택](#기술-스택)
+- [목차](#목차)
+- [프로젝트 개요](#프로젝트-개요)
+- [주요 기능](#주요-기능)
+- [프로젝트 목표](#프로젝트-목표)
+- [기술 스택](#기술-스택)
 
 ## 프로젝트 개요
 아기 상태 감별 스마트 베이비 슬리퍼는 부모가 아기를 돌보는 데 도움을 주는 스마트 기기입니다. 이 프로젝트의 목표는 아기의 울음소리를 감지하고 분석하여 부모에게 알림을 보내고, 아기가 왜 울고 있는지를 이해하고 조치를 취할 수 있도록 돕는 것입니다. 또한, 아기의 울음을 감지하면 자동으로 백색소음을 발생시키고 침대를 흔들어 아기를 달래며, 부모가 언제든 실시간 스트리밍을 통해 아기를 모니터링할 수 있습니다.
