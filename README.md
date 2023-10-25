@@ -22,4 +22,10 @@
 이 프로젝트의 목표는 부모들이 아기를 더 효과적으로 돌볼 수 있도록 돕는 스마트 베이비 슬리퍼를 개발하는 것입니다. 부모의 육아 스트레스를 줄이고, 아기의 안전과 편안함을 증진시키는 것을 목표로 합니다.
 
 ## 기술 스택
+<img src="https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask&logoColor=white" width="50%" height="150"><img src="https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white" width="50%" height="150">
+
+위의 프로젝트에서는 마이크 센서값을 전달받아 학습된 인공지능 모델에 적용시켜서 아기의 상태를 분류하기 위한 Flask 서버와 온습도 값을 전달받아 아기의 대소변 유무를 파악하기 위한 Node.js 서버 두가지로 구성하였다.  
+서버를 두가지로 구성하게된 이유는 더 많은 기술 경험을 쌓아보기 위함과 각 서버에 작업을 분산시켜 성능을 향상시키기 위해서이다.
+<br>
+<br>
 언급할만한 프로그래밍 언어, 프레임워크, 라이브러리 등 넣기
