@@ -1,6 +1,6 @@
 ![Status Classify Smart Baby Sleeper](https://capsule-render.vercel.app/api?type=waving&color=auto&height=300&section=header&text=Status%20Classify%20Smart%20Baby%20Sleeper&fontSize=50)
 
-<a href = "https://github.com/kdk0411/Audio_Classification_Model">
+<a href = "https://github.com/kdk0411/Audio_Classification_Model"></a>
 
 ## 목차
 - [목차](#목차)
@@ -9,6 +9,8 @@
 - [프로젝트 목표](#프로젝트-목표)
 - [기술 스택](#기술-스택)
   - [FLASK](#flask)
+
+<a href = "https://github.com/kdk0411/Audio_Classification_Model">ㅁ</a>
 
 ## 프로젝트 개요
 아기 상태 감별 스마트 베이비 슬리퍼는 부모가 아기를 돌보는 데 도움을 주는 스마트 기기입니다.  
