@@ -9,8 +9,9 @@
 - [프로젝트 목표](#프로젝트-목표)
 - [기술 스택](#기술-스택)
   - [FLASK](#flask)
+  - [Node.js](#nodejs)
 
-<a href = "https://github.com/kdk0411/Audio_Classification_Model">ㅁ</a>
+<a href = "https://github.com/kdk0411/Audio_Classification_Model">모델 학습 및</a>
 
 ## 프로젝트 개요
 아기 상태 감별 스마트 베이비 슬리퍼는 부모가 아기를 돌보는 데 도움을 주는 스마트 기기입니다.  
@@ -34,11 +35,12 @@
 서버를 두가지로 구성하게된 이유는 더 많은 기술 경험을 쌓아보기 위함과 각 서버에 작업을 분산시켜 성능을 향상시키기 위해서이다.
 <br>
 <br>
-언급할만한 프로그래밍 언어, 프레임워크, 라이브러리 등 넣기  
 <br>
+
 ***
 ### FLASK
-실시간 오디오 데이터 처리 및 예측을 목표로 하며, Flask 웹 애플리케이션과 Socket.IO를 기반으로 구현되었습니다. 
+실시간 오디오 데이터 처리 및 예측을 목표로 하며, Flask 웹 애플리케이션과 Socket.IO를 기반으로 구현하였습니다.  
+
 Flask 서버는 venv 가상환경을 활성화하여 가상환경에서 실행하였습니다.
 
 **핵심내용**
@@ -103,6 +105,40 @@ def handle_audio_data(data):
     {'prediction': int(predicted_classes[0])})
 ```
 
-audiopredictor.py 파일의 AudioPredictor 클래스를 import하여 음성을 기준에 따라 분류하고 중복 데이터 제거를 위해 오디오 데이터를 삭제한 후, 분류 결과를 안드로이드 앱으로 전송 해줍니다.  
+audiopredictor.py 파일의 AudioPredictor 클래스를 import하여 음성을 기준에 따라 분류하고 중복 데이터 제거를 위해 오디오 데이터를 삭제하고 분류 결과를 안드로이드 앱으로 전송 해줍니다.  
 <br>
 
+***
+### Node.js
+Node.js 서버 역시 실시간으로 온습도 데이터 처리를 목표로 하며, Node.js 웹 애플리케이션과 Socket.IO를 기반으로 구현하였고 Express 웹 프레임워크를 사용하였습니다.  
+
+**핵심내용**
+- Node.js 웹 어플리케이션을 사용하여 웹 서버를 구동하며, 클라이언트와의 통신을 처리합니다.
+- socket.io확장을 사용하여 웹 소켓 통신을 활성화하고 실시간 통신을 지원합니다.
+- 라즈베리파이 클라이언트로부터 전달받은 온습도 데이터를 기준 수치 이상인지 확인하여 대소변 유무를 안드로이드 앱으로 전달합니다.
+  
+```javascript
+server.listen(port, '192.168.35.49', () => {
+  console.log(`Server listening on port ${port}`); // 서버 실행 시 로그 출력
+  
+  io.on('connection', (socket) => {
+    console.log('Client connected'); // 클라이언트 연결 시 로그 출력
+    socket.on('dhtData', (data) => {   // 클라이언트로부터 dhtData 메시지를 받으면
+      console.log('Received dhtData: ', data);
+
+      let emitValue;
+      // 온도와 습도 값이 모두 기준수치 이상인지 확인
+      if (data.temperature >= 29 && data.humidity >= 99) {
+        emitValue = { "dhtData": 1 };
+      } else {
+        emitValue = { "dhtData": 0 };
+      }
+      io.emit('dhtData', emitValue);
+
+      emitValue = null;
+    });
+  });
+});
+```
+
+라즈베리파이 클라이언트로부터 dhtData 요청을 받으면 온습도 값을 넘겨 받아 온도가 29, 습도가 99이상이면 대소변을 눈 것으로 판단하여 안드로이드 앱으로 판단 정보를 전달합니다.
