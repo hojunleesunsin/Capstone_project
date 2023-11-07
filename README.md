@@ -168,4 +168,8 @@ server.listen(port, '192.168.35.49', () => {
 
 <br>
 
-## <a href = "https://github.com/kdk0411/Audio_Classification_Model">학습 모델 및 예측 모델 설명</a>
+## 학습 모델 및 예측 모델 설명
+<details open>
+  <summary>음성 분류 모델 구현한 조원 김동기의 github</summary>
+  <a href = "https://github.com/kdk0411/Audio_Classification_Model">https://github.com/kdk0411/Audio_Classification_Model로 이동</a>
+</details>
