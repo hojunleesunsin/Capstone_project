@@ -65,7 +65,7 @@ def handle_audio_data(data):
 ```
 
 아기의 울음소리를 실시간으로 전달받고 처리하기위해 SocketIO를 사용하였습니다.  
-<<<<<<< HEAD
+
 라즈베리파이 클라이언트로 부터 'audio_data'요청을 받게 되면 전달받은 오디오 데이터를 base64audio 변수에 저장하게 됩니다.  
 <br>
 
@@ -105,6 +105,4 @@ def handle_audio_data(data):
 
 audiopredictor.py 파일의 AudioPredictor 클래스를 import하여 음성을 기준에 따라 분류하고 중복 데이터 제거를 위해 오디오 데이터를 삭제한 후, 분류 결과를 안드로이드 앱으로 전송 해줍니다.  
 <br>
-=======
-라즈베리파이 클라이언트로 부터 'audio_data'를 전달받게 되면 전달받은 오디오 데이터를 base64audio 변수에 저장하게 됩니다.
->>>>>>> ca2cfe22a69c79ed20f63f0bac28cf6f5ddaaf7b
+
