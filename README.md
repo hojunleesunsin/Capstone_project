@@ -1,5 +1,7 @@
 ![Status Classify Smart Baby Sleeper](https://capsule-render.vercel.app/api?type=waving&color=auto&height=300&section=header&text=Status%20Classify%20Smart%20Baby%20Sleeper&fontSize=50)
 
+<a href = "https://github.com/kdk0411/Audio_Classification_Model"></a>
+
 ## 목차
 - [목차](#목차)
 - [프로젝트 개요](#프로젝트-개요)
@@ -7,6 +9,8 @@
 - [프로젝트 목표](#프로젝트-목표)
 - [기술 스택](#기술-스택)
   - [FLASK](#flask)
+
+<a href = "https://github.com/kdk0411/Audio_Classification_Model">ㅁ</a>
 
 ## 프로젝트 개요
 아기 상태 감별 스마트 베이비 슬리퍼는 부모가 아기를 돌보는 데 도움을 주는 스마트 기기입니다.  
@@ -61,6 +65,7 @@ def handle_audio_data(data):
 ```
 
 아기의 울음소리를 실시간으로 전달받고 처리하기위해 SocketIO를 사용하였습니다.  
+<<<<<<< HEAD
 라즈베리파이 클라이언트로 부터 'audio_data'요청을 받게 되면 전달받은 오디오 데이터를 base64audio 변수에 저장하게 됩니다.  
 <br>
 
@@ -100,3 +105,6 @@ def handle_audio_data(data):
 
 audiopredictor.py 파일의 AudioPredictor 클래스를 import하여 음성을 기준에 따라 분류하고 중복 데이터 제거를 위해 오디오 데이터를 삭제한 후, 분류 결과를 안드로이드 앱으로 전송 해줍니다.  
 <br>
+=======
+라즈베리파이 클라이언트로 부터 'audio_data'를 전달받게 되면 전달받은 오디오 데이터를 base64audio 변수에 저장하게 됩니다.
+>>>>>>> ca2cfe22a69c79ed20f63f0bac28cf6f5ddaaf7b
