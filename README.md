@@ -35,6 +35,7 @@
 ***
 ### FLASK
 실시간 오디오 데이터 처리 및 예측을 목표로 하며, Flask 웹 애플리케이션과 Socket.IO를 기반으로 구현되었습니다. 
+Flask 서버는 venv 가상환경을 활성화하여 가상환경에서 실행하였습니다.
 
 **핵심내용**
 - Flask 웹 어플리케이션을 사용하여 웹 서버를 구동하며, 클라이언트와의 통신을 처리합니다.
@@ -60,4 +61,42 @@ def handle_audio_data(data):
 ```
 
 아기의 울음소리를 실시간으로 전달받고 처리하기위해 SocketIO를 사용하였습니다.  
-라즈베리파이 클라이언트로 부터 'audio_data'를 전달받게 되면 전달받은 오디오 데이터를 base64audio 변수에 저장하게 됩니다.
+라즈베리파이 클라이언트로 부터 'audio_data'요청을 받게 되면 전달받은 오디오 데이터를 base64audio 변수에 저장하게 됩니다.  
+<br>
+
+
+```python
+    audio_data = base64.b64decode(base64audio)  
+    
+    filename = datetime.now().strftime("%Y%m%d%H%M%S") + "_audio_file.wav"  
+    
+    # 오디오 파일 저장
+    with open(os.path.join(audio_dir, filename), 'wb') as f:
+        f.write(audio_data)
+
+    print(f"Received audio data of length {len(audio_data)}")
+    emit('response', {'message': 'Audio data received and saved'})
+```
+
+오디오 데이터를 base64 모듈을 사용하여 디코딩한 후 지정된 파일 경로에 저장합니다.  
+<br>
+
+```python
+    predictor = AudioPredictor(model_path, audio_dir)
+    predicted_classes, _ = predictor.predict_classes()
+    print(predicted_classes)
+    print(predicted_classes[0])
+    
+        # Delete the file after prediction
+    if os.path.exists(os.path.join(audio_dir, filename)):
+        os.remove(os.path.join(audio_dir, filename))
+        print(f"Deleted the file: {filename}")
+    else:
+        print("The file does not exist")
+        
+    socketio.emit('prediction', 
+    {'prediction': int(predicted_classes[0])})
+```
+
+audiopredictor.py 파일의 AudioPredictor 클래스를 import하여 음성을 기준에 따라 분류하고 중복 데이터 제거를 위해 오디오 데이터를 삭제한 후, 분류 결과를 안드로이드 앱으로 전송 해줍니다.  
+<br>
